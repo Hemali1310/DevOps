@@ -14,7 +14,9 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        withCredentials([string(credentialsId: 'dockerhub', variable: 'DOCKERHUB_CREDENTIALS')]) {
+        sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u hemali1310 --password-stdin'
+        }
       }
     }
     stage('Push') {
