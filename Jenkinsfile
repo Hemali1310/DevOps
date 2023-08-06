@@ -15,7 +15,8 @@ pipeline {
     stage('Login') {
       steps {
         withCredentials([string(credentialsId: 'dockerhub', variable: 'DOCKERHUB_CREDENTIALS')]) {
-        sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u hemali1310 --password-stdin'
+            sh 'echo $DOCKERHUB_CREDENTIALS' // Display the credentials to verify their value
+            sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u hemali1310 --password-stdin'
         }
       }
     }
