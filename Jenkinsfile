@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'cp /path/to/.docker/config.json $HOME/.docker/config.json'
+        sh 'cp /home/ubuntu/.docker/config.json $HOME/.docker/config.json'
       }
     }
 
