@@ -14,9 +14,10 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'docker login -u hemali1310 -p Hems@1234'
+        sh 'cp /path/to/.docker/config.json $HOME/.docker/config.json'
       }
     }
+
 
     stage('Push') {
       steps {
