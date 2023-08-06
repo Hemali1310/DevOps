@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t hemali1310/DevOps .'
+        sh 'docker build -t hemali1310/devops .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push hemali1310/DevOps'
+        sh 'docker push hemali1310/devops'
       }
     }
   }
